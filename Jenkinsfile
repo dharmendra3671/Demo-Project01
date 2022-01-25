@@ -7,7 +7,7 @@ pipeline {
                 bat 'python demo.py'
             }
         }
-        stage('Build') {
+        stage('Batfile') {
             steps {
                 bat "hello.bat"
             }
