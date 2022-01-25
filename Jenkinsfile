@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Python') {
             steps {
-                sh './demo.py'
+                sh 'python demo.py'
             }
         }
         stage('Build') {
