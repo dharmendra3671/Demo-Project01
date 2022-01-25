@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                echo 'Building'
+                bat "hello.bat"
             }
         }
         stage('Deploy') {
