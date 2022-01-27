@@ -2,7 +2,7 @@ import os
 import datetime
 import glob
 path = 'D:\Demo-Project01\Source\Test'
-today = datetime.datetime.today()
+#today = datetime.datetime.today()
 os.chdir(path)
 print("List of files in the current Directory: ")
 for root,directories,files in os.walk(path,topdown=False):
