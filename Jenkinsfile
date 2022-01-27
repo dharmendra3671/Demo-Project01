@@ -2,19 +2,14 @@ pipeline {
     agent any
 
     stages {
-        stage('Python') {
+        stage('Python File') {
             steps {
                 bat 'python demo.py'
             }
         }
-        stage('Batfile') {
+        stage('Batch File') {
             steps {
                 bat "hello.bat"
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
             }
         }
         stage('Test') {
