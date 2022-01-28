@@ -24,7 +24,9 @@ for root,directories,files in os.walk(path,topdown=False):
             print(os.path.join(root, name),"No of days of Created File :", filetime.days)
             os.remove(os.path.join(root, name))
             
+   print("The no of older files in current Directories are: ",count1)
+            
 for dirpath,dirnames,filenames in os.walk(path):
      print("Current Path",dirpath)
      print("current Directories",dirnames)
-     print("The Most Recent Files are:",filenames)      
+     print("The Most Recent Files are:",filenames) 
