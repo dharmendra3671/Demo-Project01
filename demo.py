@@ -27,7 +27,7 @@ for root,directories,files in os.walk(path,topdown=False):
            # print(os.path.join(root, name),"No of days of Created File :", filetime.days)
             os.remove(os.path.join(root, name))
 
-   print("The no of deleted files are: ",count1)
+  # print("The no of deleted files are: ",count1)
    print("List of Delted Files older than Seven Days")
 for x,y in zip(remove_list,no_of_olddays):
     print(f"Filename : {x} \t Filedays: {y}")          
