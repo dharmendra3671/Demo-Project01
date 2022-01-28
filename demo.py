@@ -26,11 +26,11 @@ for root,directories,files in os.walk(path,topdown=False):
             no_of_olddays.append(filetime.days)
            # print(os.path.join(root, name),"No of days of Created File :", filetime.days)
             os.remove(os.path.join(root, name))
-            
-   print("List of deleted files are:",remove_list,"\n No of days of Created File :",no_of_olddays)
 
-   print("The no of older files in current Directories are: ",count1)
-            
+   print("The no of deleted files are: ",count1)
+for x,y in zip(remove_list,no_of_olddays):
+    print("filename:   \t Filedays:")
+    print(f"Filename : {x} \t Filedays: {y}")          
 for dirpath,dirnames,filenames in os.walk(path):
      print("Current Path",dirpath)
      print("current Directories",dirnames)
