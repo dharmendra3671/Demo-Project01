@@ -7,11 +7,6 @@ pipeline {
                 bat 'demo.py'
             }
         }
-        stage('Batch File') {
-            steps {
-                bat "hello.bat"
-            }
-        }
         stage('Test') {
             steps {
                 echo 'Testing'
