@@ -29,7 +29,6 @@ for root,directories,files in os.walk(path,topdown=False):
 
    print("The no of deleted files are: ",count1)
 for x,y in zip(remove_list,no_of_olddays):
-    print("filename:   \t Filedays:")
     print(f"Filename : {x} \t Filedays: {y}")          
 for dirpath,dirnames,filenames in os.walk(path):
      print("Current Path",dirpath)
