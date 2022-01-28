@@ -24,7 +24,6 @@ for root,directories,files in os.walk(path,topdown=False):
             count1+=1
             remove_list.append(name)
             no_of_olddays.append(filetime.days)
-           # print(os.path.join(root, name),"No of days of Created File :", filetime.days)
             os.remove(os.path.join(root, name))
 
   # print("The no of deleted files are: ",count1)
