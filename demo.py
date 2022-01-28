@@ -8,6 +8,7 @@ file=[]
 for files in os.listdir(path):
     count+=1
     file.append(files)
+
 print(os.path.join(path),f" \n List of Files in Current Directory are : {file}\n The no of files present in current Directory are : {count}")
 older_files=[]
 remove_list=[]
@@ -21,9 +22,13 @@ for root,directories,files in os.walk(path,topdown=False):
         
         if filetime.days>=7:
             count1+=1
-            print(os.path.join(root, name),"No of days of Created File :", filetime.days)
+            remove_list.append(name)
+            no_of_olddays.append(filetime.days)
+           # print(os.path.join(root, name),"No of days of Created File :", filetime.days)
             os.remove(os.path.join(root, name))
             
+   print("List of deleted files are:",remove_list,"\n No of days of Created File :",no_of_olddays)
+
    print("The no of older files in current Directories are: ",count1)
             
 for dirpath,dirnames,filenames in os.walk(path):
