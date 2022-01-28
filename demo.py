@@ -21,7 +21,7 @@ for root,directories,files in os.walk(path,topdown=False):
         
         if filetime.days>=7:
             count1+=1
-            print(os.path.join(root, name), filetime.days)
+            print(os.path.join(root, name),"No of days of Created File :", filetime.days)
             os.remove(os.path.join(root, name))
             
 for dirpath,dirnames,filenames in os.walk(path):
