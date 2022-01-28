@@ -34,4 +34,4 @@ for x,y in zip(remove_list,no_of_olddays):
 for dirpath,dirnames,filenames in os.walk(path):
      print("Current Path",dirpath)
      print("current Directories",dirnames)
-     print("The Most Recent Files are:",filenames) 
+     print("List of recent created  Files are:",filenames) 
