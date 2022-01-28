@@ -1,7 +1,8 @@
 import os 
 import datetime
 import glob
-path = 'D:\Demo-Project01\Test'
+import zipfile
+path = 'D:\Test'
 count=0
 count1=0
 file=[]
@@ -34,3 +35,24 @@ for dirpath,dirnames,filenames in os.walk(path):
      print("Current Path",dirpath)
      print("current Directories",dirnames)
      print("List of recent Files less than Seven days are:",filenames) 
+
+
+import os
+from pathlib import Path
+from zipfile import ZipFile
+DOWNLOAD_DIR = Path('D:\Test')
+ZIPPED_FILE_DIR = Path('D:\Test')
+
+def get_list_of_all_folders(download_dir: Path):
+    return [f for f in download_dir.iterdir() if download_dir.is_dir()]
+def zip_files():
+    folder_list = get_list_of_all_folders(DOWNLOAD_DIR)
+    with ZipFile(ZIPPED_FILE_DIR / "Test1.zip", "w") as zip:
+        for folder in folder_list:
+            zip.write(folder)
+
+
+
+zip_files()
+
+
