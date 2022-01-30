@@ -6,7 +6,7 @@ import zipfile
 dir_name = 'G:\Python_Workspace\Flask_pytest\Test_zip'
 
 list_of_files = filter( lambda x: os.path.isfile(os.path.join(dir_name, x)),
-                        os.listdir(dir_name) )
+                        os.listdir(dir_name))
 
 list_of_files = sorted( list_of_files,
                         key = lambda x: os.path.getmtime(os.path.join(dir_name, x)))
