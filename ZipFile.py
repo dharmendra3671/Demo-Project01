@@ -3,10 +3,10 @@ import time
 #from pathlib import Path
 import zipfile
 
-dir_name = 'G:\Python_Workspace\Flask_pytest\Test_zip'
+dir_name = 'D:\Demo-Project01\Source\Test'
 
 list_of_files = filter( lambda x: os.path.isfile(os.path.join(dir_name, x)),
-                        os.listdir(dir_name))
+                        os.listdir(dir_name) )
 
 list_of_files = sorted( list_of_files,
                         key = lambda x: os.path.getmtime(os.path.join(dir_name, x)))
@@ -24,6 +24,7 @@ for file_name in list_of_files[:5]:
 
 def prepare_zip(dir_name):
     new_file = dir_name + '.zip'
+    
     zip = zipfile.ZipFile(new_file, 'w', zipfile.ZIP_DEFLATED)
     
     for dir_name, dir_names, files in os.walk(dir_name):
@@ -33,8 +34,8 @@ def prepare_zip(dir_name):
         for file in files:
             zip.write(os.path.join(dir_name, file), f_path + file)
     zip.close()
-    
-    print("File Zipped successfully..")
+    print("File Created successfully..")
     return new_file
-  
+
+
 prepare_zip(dir_name)
