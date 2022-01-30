@@ -36,5 +36,4 @@ def prepare_zip(dir_name):
     print("File Zipped successfully..")
     return new_file
 
-
-  prepare_zip(dir_name)
+ prepare_zip(dir_name)
