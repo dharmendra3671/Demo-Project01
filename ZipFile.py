@@ -34,7 +34,7 @@ def prepare_zip(dir_name):
         for file in files:
             zip.write(os.path.join(dir_name, file), f_path + file)
     zip.close()
-    print("File Created successfully..")
+    print("Files Zipped successfully..")
     return new_file
 
 
