@@ -24,18 +24,17 @@ for file_name in list_of_files[:5]:
 
 def prepare_zip(dir_name):
     new_file = dir_name + '.zip'
-    # creating zip file with write mode
     zip = zipfile.ZipFile(new_file, 'w', zipfile.ZIP_DEFLATED)
-    # Walk through the files in a directory
+    
     for dir_name, dir_names, files in os.walk(dir_name):
         f_path = dir_name.replace(dir_name, '')
         f_path = f_path and f_path + os.sep
-        # Writing each file into the zip
+        
         for file in files:
             zip.write(os.path.join(dir_name, file), f_path + file)
     zip.close()
-    print("File Created successfully..")
+    print("File Zipped successfully..")
     return new_file
 
 
-prepare_zip(dir_name)
+  prepare_zip(dir_name)
