@@ -23,7 +23,7 @@ for file_name in list_of_files[:5]:
 
 
 def prepare_zip(dir_name):
-    new_file = dir_name + '.zip'
+    new_file = dir_name + 'Python.zip'
     
     zip = zipfile.ZipFile(new_file, 'w', zipfile.ZIP_DEFLATED)
     
