@@ -26,8 +26,8 @@ def prepare_zip(dir_name):
     
     zip = zipfile.ZipFile(new_file, 'w', zipfile.ZIP_DEFLATED)
     
-    for dir_name, dir_names, files in os.walk(dir_name):
-        f_path = dir_name.replace(dir_name, '')
+    for dir_file, dir_names, files in os.walk(dir_name):
+        f_path = dir_file.replace(dir_file, '')
         f_path = f_path and f_path + os.sep
         
         for file in files:
