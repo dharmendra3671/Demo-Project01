@@ -1,6 +1,5 @@
 import os
 import time
-#from pathlib import Path
 import zipfile
 
 dir_name = 'D:\Demo-Project01\Source\Test'
