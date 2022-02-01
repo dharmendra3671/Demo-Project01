@@ -2,7 +2,7 @@ import os
 import time
 import zipfile
 
-dir_name = 'D:\Demo-Project01\Source\Test'
+#dir_name = 'D:\Demo-Project01\Source\Test'
 
 list_of_files = filter( lambda x: os.path.isfile(os.path.join(dir_name, x)),
                         os.listdir(dir_name) )
