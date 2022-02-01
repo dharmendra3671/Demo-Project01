@@ -40,6 +40,5 @@ def prepare_zip(path):
     print("Files Zipped successfully..")
     return new_file
 
-
 prepare_zip(filedata['path'])
-print()
+
