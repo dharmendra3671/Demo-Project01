@@ -2,7 +2,7 @@ import json
 import time
 import zipfile
 import os
-with open('Jasonfile.json','r') as filesdata:
+with open('Test.json','r') as filesdata:
     filedata=json.load(filesdata)   
 list_of_files = filter( lambda x: os.path.isfile(os.path.join(filedata['path'], x)),
                         os.listdir(filedata['path']))
