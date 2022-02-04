@@ -1,5 +1,5 @@
 pipeline {
-    agent { lable:'Jenkins-Slave'}
+    agent { lables:'windows_ag'}
     stages {
         stage('Python File') {
             steps {
