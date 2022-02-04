@@ -1,5 +1,5 @@
 pipeline{
-    agent {
+    agent('Slave1') {
         node {
             label 'Jenkins-Slave'
             stages {
