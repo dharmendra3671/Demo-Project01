@@ -6,8 +6,8 @@ pipeline{
                 stage('Python File') {
                     steps {
                         bat 'PythonwithJson.py'
-                        }
                     }
+                }
                 stage('Test') {
                     steps {
                         echo 'Testing'
