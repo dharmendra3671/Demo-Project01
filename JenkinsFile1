@@ -1,23 +1,19 @@
-node('Slave1'){
-
-    pipeline  {
-    #agent any
-
+pipeline{
+    node('Slave1'){
         stages {
-            stage('Python File') {
-                steps {
-                    bat 'PythonwithJson.py'
-                }
+        stage('Python File') {
+            steps {
+                bat 'PythonwithJson.py'
             }
-            stage('Test') {
-                steps {
-                    echo 'Testing'
-                }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
             }
-            stage('Release') {
-                steps {
-                    echo 'Releasing'
-                }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
             }
         }
     }
