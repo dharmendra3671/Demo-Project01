@@ -1,7 +1,6 @@
-pipeline{
+pipeline {
     agent { Slave1:'Jenkins-Slave'
         node {
-            label 'Jenkins-Slave'
             stages {
                 stage('Python File') {
                     steps {
