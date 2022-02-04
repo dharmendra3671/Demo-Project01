@@ -1,5 +1,5 @@
 pipeline{
-    node('Slave1'){
+    agent{lable: 'Slave1'}
         stages {
             stage('Python File') {
                 steps {
