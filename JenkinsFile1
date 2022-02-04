@@ -1,22 +1,19 @@
 pipeline {
-    agent { Slave1:'Jenkins-Slave'
-        node {
-            stages {
-                stage('Python File') {
-                    steps {
-                        bat 'PythonwithJson.py'
-                    }
-                }
-                stage('Test') {
-                    steps {
-                        echo 'Testing'
-                    }
-                }
-                stage('Release') {
-                    steps {
-                        echo 'Releasing'
-                    }
-                }
+    agent { lable:'Jenkins-Slave'}
+    stages {
+        stage('Python File') {
+            steps {
+                bat 'PythonwithJson.py'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
             }
         }
     }
