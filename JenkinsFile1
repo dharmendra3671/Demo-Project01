@@ -1,5 +1,5 @@
 pipeline {
-    agent { lable:'windows_ag'}
+    agent any
     stages {
         stage('Python File') {
             steps {
