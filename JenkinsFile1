@@ -3,24 +3,6 @@ pipeline{
         node {
             label 'Jenkins-Slave'
             workspace 'D:\Slave1_ws\workspace\Project_zip'
-            
-            stages {
-                stage('Python File') {
-                    steps {
-                        bat 'PythonwithJson.py'
-                        }
-                    }
-                stage('Test') {
-                    steps {
-                        echo 'Testing'
-                    }
-                }
-                stage('Release') {
-                    steps {
-                        echo 'Releasing'
-                    }
-                }
-            }
-        }
-    }
+           }
+      }
 }
