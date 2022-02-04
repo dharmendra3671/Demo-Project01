@@ -2,8 +2,6 @@ pipeline{
     agent {
         node {
             label 'Jenkins-Slave'
-            workspace 'D:\Slave1_ws\workspace\Project_zip'
-            
             stages {
                 stage('Python File') {
                     steps {
