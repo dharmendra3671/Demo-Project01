@@ -2,11 +2,6 @@ pipeline {
     agent { label 'Slave && Agent1'}
     
     stages {
-    #    stage('Python File') {
-        #       steps {
-         #       bat 'PythonwithJson.py'
-          #  }
-       # }
         stage('Test') {
             steps {
                 echo 'Testing'
