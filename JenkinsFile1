@@ -3,6 +3,17 @@ pipeline {
     
     stages {
         stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
+            }
+        }
+        
+        stage('Test') {
         agent {label 'Agent1'}
             steps {
                 echo 'Testing'
