@@ -3,7 +3,7 @@ pipeline {
     
     stages {
         stage('Test') {
-        agent {label 'Slave'}
+        agent('Slave2') {label 'Slave'}
             steps {
                 echo 'Testing'
             }
