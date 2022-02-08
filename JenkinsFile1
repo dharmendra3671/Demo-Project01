@@ -12,13 +12,13 @@ pipeline {
                 echo 'Releasing'
             }
         }   
-        stage('Test') {
+        stage('Test1') {
         agent {label 'Agent1'}
             steps {
                 echo 'Testing'
             }
         }
-        stage('Release') {
+        stage('Release1') {
             steps {
                 echo 'Releasing'
             }
