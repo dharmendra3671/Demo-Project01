@@ -13,7 +13,7 @@ pipeline {
             }
         }   
         stage('Test1') {
-        agent {label 'Agent1'}
+        agent {label 'Slave'}
             steps {
                 echo 'Testing'
             }
