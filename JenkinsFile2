@@ -23,8 +23,8 @@ pipeline {
                 echo 'Releasing'
             }
         }
-        agent {label 'Slave'}
         stage('Deploy') {
+        agent {label 'Slave'}
             steps {
                 echo 'Deploying'
             }
