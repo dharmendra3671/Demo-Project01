@@ -26,12 +26,12 @@ pipeline {
                         build(job: 'Project_zip')
                     }
                 }
-            stage('Deploy') {
-                steps {
-                    echo 'Deploying'
-                }
-            }    
-        }
-    }    
+                stage('Deploy') {
+                    steps {
+                        echo 'Deploying'
+                    }
+                }    
+            }
+        }    
+    }
 }
-
