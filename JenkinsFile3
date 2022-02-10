@@ -1,17 +1,15 @@
 pipeline {
-    agent none
+    agent {label 'Slave'}
     stages {
         stage('Test') {
             parallel {   
                 stage('Parallel Test1') {
-                agent {label 'Slave'}
                     steps {
                         echo 'Testing'
                         build(job: "Pythondemo")
                     }
                 }
                 stage('Parallel Release1') {
-                agent {label 'Slave'}
                     steps {
                         echo 'Releasing'
                         build(job: 'Project_zip')
