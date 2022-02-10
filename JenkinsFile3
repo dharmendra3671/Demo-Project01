@@ -1,24 +1,22 @@
 pipeline {
     agent {label 'Slave'}
     stages {
-        stage('Test') {
-            parallel {   
-                stage('Parallel Test1') {
-                    steps {
-                        echo 'Testing'
-                        build(job: "Pythondemo")
-                    }
+        stage('Parallel Test1') {
+            steps {
+                echo 'Testing'
+                build(job: "Pythondemo")
                 }
-                stage('Parallel Release1') {
-                    steps {
-                        echo 'Releasing'
-                        build(job: 'Project_zip')
-                    }
-                }
-                  
+            }
+        stage('Parallel Release1') {
+            steps {
+                echo 'Releasing'
+                build(job: 'Project_zip')
             }
         }
+                  
     }
-}    
+        
+}
+
   
 
