@@ -2,12 +2,7 @@ pipeline {
     agent {label 'Slave'}
     stages {
         stage('Test') {
-            parallel {
-                stage('Parallel Release') {
-                        steps {
-                            echo 'Releasing'
-                        }
-                    }   
+            parallel {   
                 stage('Parallel Test1') {
                 agent {label 'Slave'}
                     steps {
@@ -22,13 +17,10 @@ pipeline {
                         build(job: 'Project_zip')
                     }
                 }
-                stage('Deploy') {
-                    steps {
-                        echo 'Deploying'
-                    }
-                }    
+                  
             }
         }
     }
 }    
+  
 
