@@ -6,7 +6,7 @@ pipeline {
                 stage('Parallel Test1') {
                     steps {
                         echo 'Testing'
-                        build(job: "Pythondemo")
+                        build(job: 'Pythondemo')
                     }
                 }
                 stage('Parallel Release1') {
