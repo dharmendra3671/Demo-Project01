@@ -28,7 +28,7 @@ pipeline {
                   spec: '''{
                    "files": [
                       {
-                      "pattern": ".zip",
+                      "pattern": "*.zip",
                       "target": "Zipfile_artifact"
                       }
                             ]
