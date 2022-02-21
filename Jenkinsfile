@@ -28,7 +28,7 @@ pipeline {
 
             }
         }
-        stage ('Upload.'){
+        stage ('Upload'){
             steps{
                 rtUplode (
                  serverId:"Artifactory",
