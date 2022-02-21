@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-        stage ('Server..'){
+        stage ('Server.'){
             steps {
                 rtServer (
                     id: "Artifactory server",
