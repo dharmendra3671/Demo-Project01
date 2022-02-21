@@ -30,13 +30,12 @@ pipeline {
                   spec: '''{
                    "files": [
                       {
-                      "pattern": "*.zip",
-                      "target": "Zipfile_artifact"
+                      "pattern": "*Python*/.zip",
+                      "target": "Zipfile_artifact/"
                       }
                             ]
                            }''',
-                           buildName: 'pipeline',
-                           buildNumber: '29',
+                           buildName: 'pipeline'
                         )
             }
         }
