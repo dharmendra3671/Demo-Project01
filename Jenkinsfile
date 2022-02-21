@@ -26,7 +26,7 @@ pipeline {
         stage ('Upload'){
             steps{
                 rtUplode (
-                 serverId:"Artifactory",
+                 serverId:"Artifactory server",
                   spec: '''{
                    "files": [
                       {
@@ -43,7 +43,7 @@ pipeline {
         stage ('Publish build info..') {
             steps {
                 rtPublishBuildInfo (
-                    serverId: "Artifactory"
+                    serverId: "Artifactory server"
                 )
             }
         }
