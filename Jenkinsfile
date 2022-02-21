@@ -6,7 +6,7 @@ pipeline {
         stages {
             stage('Git Checkout'){
                 steps {
-                    git branch: 'main', credentialsId: 'JsonPy', url: 'https://github.com/dharmendra3671/Demo-Project01/blob/main/Test.json'
+                    git branch: 'main', credentialsId: 'Test.json', url: 'https://github.com/dharmendra3671/Demo-Project01/blob/main/Test.json'
                 }
             }
         stage ('Python') {
