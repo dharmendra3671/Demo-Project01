@@ -36,7 +36,7 @@ pipeline {
                    "files": [
                       {
                       "pattern": ".zip",
-                      "target": "logic-ops-lab-libs-snapshot-local"
+                      "target": "Zipfile_artifact"
                       }
                             ]
                            }''',
