@@ -23,28 +23,5 @@ pipeline {
 
             }
         }
-        stage ('Upload'){
-            steps{
-                rtUplode (
-                 serverId:"Artifactory server",
-                  spec: '''{
-                   "files": [
-                      {
-                      "pattern": "*.war",
-                      "target": "libs--logic-ops-libs-snapshot-local"
-                      }
-                            ]
-                           }''',
-                           buildName: 'pipeline'
-                        )
-            }
-        }
-        stage ('Publish build info..') {
-            steps {
-                rtPublishBuildInfo (
-                    serverId: "Artifactory server"
-                )
-            }
-        }
     }
 }       
