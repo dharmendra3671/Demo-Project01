@@ -4,11 +4,6 @@ pipeline {
             maven "3.8.4"
                 }
         stages {
-            stage('Git Checkout'){
-                steps {
-                    git branch: 'main', credentialsId: 'Demo-Project01', url: 'https://github.com/dharmendra3671/Demo-Project01'
-                }
-            }
         stage ('Python') {
             steps {
                 bat 'PythonwithJson.py'
