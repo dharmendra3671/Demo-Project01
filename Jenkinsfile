@@ -30,8 +30,8 @@ pipeline {
                   spec: '''{
                    "files": [
                       {
-                      "pattern": "*Python*/.zip",
-                      "target": "Zipfile_artifact/"
+                      "pattern": "*.war",
+                      "target": "libs--logic-ops-libs-snapshot-local"
                       }
                             ]
                            }''',
