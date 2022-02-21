@@ -1,6 +1,8 @@
 pipeline {
     agent any
-    
+        tools {
+            maven "Maven"
+                }
         stages {
         stage ('Python') {
             steps {
@@ -11,7 +13,7 @@ pipeline {
         stage ('Server'){
             steps {
                 rtServer (
-                    id: "Artifactory",
+                    id: "Artifactory server",
                     url: 'http://127.0.0.1:8082/artifactory',
                     username: 'admin',
                     password: 'Kumar@6805',
@@ -33,6 +35,8 @@ pipeline {
                       }
                             ]
                            }''',
+                           buildName: 'pipeline',
+                           buildNumber: '29',
                         )
             }
         }
