@@ -11,7 +11,7 @@ pipeline {
             }
         stage ('Python') {
             steps {
-                bat 'Test.py'
+                bat 'PythonwithJson.py'
             }
         }
 
