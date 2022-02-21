@@ -11,7 +11,7 @@ pipeline {
             }
         stage ('Python') {
             steps {
-                bat '.py'
+                bat 'PythonwithJson.py'
             }
         }
 
@@ -21,7 +21,7 @@ pipeline {
                     id: "Artifactory",
                     url: 'http://127.0.0.1:8082/artifactory',
                     username: 'admin',
-                    password: 'Yogesh@123',
+                    password: 'Indro@6805',
                     bypassProxy: true,
                     timeout: 300
                         )
