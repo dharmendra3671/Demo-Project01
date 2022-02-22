@@ -30,7 +30,7 @@ pipeline {
                           "files": [
                             {
                               "pattern": "D:\\Test\\*.zip",
-                              "target": "libs--logic-ops-libs-snapshot-local"
+                              "target": "Zipfile_Artifact"
                             }
                          ]      
                     }'''
