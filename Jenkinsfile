@@ -9,7 +9,6 @@ pipeline {
                 bat 'PythonwithJson.py'
             }
         }
-
         stage ('Server..'){
             steps {
                 rtServer (
@@ -25,16 +24,16 @@ pipeline {
         }
         stage ('Upload'){
             steps{
-                rtUplode (
-                    serverId:"Artifactory server",
+                rtUpload (
+                    serverId: 'Artifactory server',
                     spec: '''{
-                        "files": [
+                          "files": [
                             {
-                                "pattern": "*.zip",
-                                "target": "libs--logic-ops-libs-snapshot-local"
+                              "pattern": ".zip",
+                              "target": "libs--logic-ops-libs-snapshot-local"
                             }
-                        ]
-                    }''',
+                         ]      
+                    }'''
                 )
             }
         }
@@ -47,4 +46,3 @@ pipeline {
         }
     }
 }  
-
