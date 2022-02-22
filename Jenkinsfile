@@ -29,7 +29,7 @@ pipeline {
                     spec: '''{
                           "files": [
                             {
-                              "pattern": ".zip",
+                              "pattern": "/target/.zip",
                               "target": "libs--logic-ops-libs-snapshot-local"
                             }
                          ]      
