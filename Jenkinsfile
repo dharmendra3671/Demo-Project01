@@ -2,7 +2,7 @@ pipeline {
     agent any
         tools {
             maven "Maven"
-                }
+        }
         stages {
         stage ('Python') {
             steps {
@@ -10,7 +10,7 @@ pipeline {
             }
         }
 
-        stage ('Server'){
+        stage ('Server..'){
             steps {
                 rtServer (
                     id: "Artifactory server",
@@ -19,9 +19,31 @@ pipeline {
                     password: 'Kumar@6805',
                     bypassProxy: true,
                     timeout: 300
-                        )
+                )
 
             }
         }
+        stage ('Upload'){
+            steps{
+                rtUplode (
+                 serverId:"Artifactory server",
+                  spec: '''{
+                   "files": [
+                      {
+                      "pattern": "*.zip",
+                      "target": "libs--logic-ops-libs-snapshot-local"
+                      }
+                        ]
+                    }''',
+                )
+            }
+        }
+        stage ('Publish build info..') {
+            steps {
+                rtPublishBuildInfo (
+                    serverId: "Artifactory server"
+                )
+            }
+        }
     }
-}       
+}  
