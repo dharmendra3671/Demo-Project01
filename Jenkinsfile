@@ -26,13 +26,13 @@ pipeline {
         stage ('Upload'){
             steps{
                 rtUplode (
-                 serverId:"Artifactory server",
-                  spec: '''{
-                   "files": [
-                      {
-                      "pattern": "*.zip",
-                      "target": "libs--logic-ops-libs-snapshot-local"
-                      }
+                    serverId:"Artifactory server",
+                    spec: '''{
+                        "files": [
+                            {
+                                "pattern": "*.zip",
+                                "target": "libs--logic-ops-libs-snapshot-local"
+                            }
                         ]
                     }''',
                 )
@@ -47,3 +47,4 @@ pipeline {
         }
     }
 }  
+
