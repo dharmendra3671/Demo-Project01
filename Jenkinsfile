@@ -27,7 +27,7 @@ pipeline {
                           "files": [
                             {
                               "pattern": "D:\\Test\\*.zip",
-                              "target": "Zipfile_Artifact"
+                              "target": "Zipfile_Artifactory"
                             }
                          ]      
                     }'''
