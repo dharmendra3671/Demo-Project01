@@ -6,7 +6,7 @@ pipeline {
                 bat 'PythonwithJson.py'
             }
         }
-        stage ('Server.'){
+        stage ('Server..'){
             steps {
                 rtServer (
                     id: "Artifactory server",
