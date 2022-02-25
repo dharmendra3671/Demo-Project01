@@ -22,7 +22,7 @@ pipeline {
                     emailext attachLog: true, 
                     body: 'This is Test Pipeline job.', 
                     recipientProviders: [buildUser()], 
-                    subject: 'Test pipeline', 
+                    subject: 'Test pipeline',
                     to: 'kumar.dk3671@gmail.com'
                 }
             }
