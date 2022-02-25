@@ -1,4 +1,4 @@
-pipeline {
+ pipeline {
     agent any
         stages {
         stage('Bulding') {
@@ -19,17 +19,12 @@ pipeline {
         stage('post') {
             steps {
                 echo 'Status of build'
-                emailext attachLog: true, 
-                    body: 'This is Test Pipeline job.', 
-                    recipientProviders:[[$class: 'CulpritsRecipientProvider'],
-                                        [$class: 'DevelopersRecipientProvider'],
-                                        [$class: 'RequesterRecipientProvider']], 
-                    subject: 'Test pipeline', 
-                    to: 'kumar.dk3671@gmail.com'
-                }
+                 emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n More info at: ${env.BUILD_URL}",
+                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                 subject: "Jenkins Build ${currentBuild.currentResult}: Job ${env.JOB_NAME}" 
+                 to: 'kumar.dk3671@gmail.com'   
+               }
             }
-        }
-    }        
-        
+        }  
    
       
