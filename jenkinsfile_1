@@ -17,25 +17,6 @@ pipeline {
             }
         }
         stage('post') {
-            pipeline {
-    agent any
-        stages {
-        stage('Bulding') {
-            steps {
-                bat 'PythonwithJson.py'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
-        stage('Release') {
-            steps {
-                echo 'Releasing'
-            }
-        }
-        stage('post') {
             steps {
                 echo 'Status of build'
                 emailext attachLog: true, body:
