@@ -22,10 +22,10 @@ pipeline {
                 emailext body: "${DEFAULT_CONTENT}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
                 subject: "${DEFAULT_SUBJECT}"
-                 to: 'kumar.dk3671@gmail.com'   
+                to: 'kumar.dk3671@gmail.com'   
                }
             }
         }
     }   
-         
+      
       
