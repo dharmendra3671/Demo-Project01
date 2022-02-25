@@ -1,4 +1,4 @@
- pipeline {
+pipeline {
     agent any
         stages {
         stage('Bulding') {
@@ -18,16 +18,14 @@
         }
         stage('post') {
             steps {
-                post {
-                    sucess {
-                        mail to: 'kumar.dk3671@gmail.com',
-                            subject: 'Sucess Pipeline',
-                            body: "Pipeline is sucessfull"
-                        }
-                    }
-                    
+                echo 'Status of build'
+                    emailext attachLog: true, 
+                    body: 'This is Test Pipeline job.', 
+                    recipientProviders: [buildUser()], 
+                    subject: 'Test pipeline', 
+                    to: 'kumar.dk3671@gmail.com'
                 }
             }
         }
-    }        
+    }  
       
