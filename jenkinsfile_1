@@ -19,9 +19,9 @@ pipeline {
         stage('post') {
             steps {
                 echo 'Status of build'
-                emailext body: "${DEFAULT_CONTENT}",
+                emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n\n ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                subject: "${DEFAULT_SUBJECT}"  
+                subject: "Jenkins Pipeline Build Status"  
                }
             }
         }
