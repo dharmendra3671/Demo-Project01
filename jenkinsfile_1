@@ -21,8 +21,7 @@ pipeline {
                 echo 'Status of build'
                 emailext body: "${DEFAULT_CONTENT}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                subject: "${DEFAULT_SUBJECT}"
-                to: 'kumar.dk3671@gmail.com'   
+                subject: "${DEFAULT_SUBJECT}"  
                }
             }
         }
