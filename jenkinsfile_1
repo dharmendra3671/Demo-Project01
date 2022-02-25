@@ -21,5 +21,36 @@ pipeline {
                 echo 'Releasing'
             }
         }
+    }
+    pipeline {
+    agent any
+        stages {
+        stage('Bulding') {
+            steps {
+                bat 'PythonwithJson.py'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing'
+            }
+        }   
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+        stage('Release') {
+            steps {
+                echo 'Releasing'
+            }
+        }
+    post {
+        sucess {
+            mail to: 'kumar.dk3671@gmail.com',
+                subject: 'Sucess Pipeline',
+                body: "Pipeline is sucessfull"
+            }
+        }
     }    
 }
