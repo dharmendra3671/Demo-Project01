@@ -15,15 +15,17 @@
             steps {
                 echo 'Releasing'
             }
-        }
-        
-    }
-    post {
-        sucess {
-            mail to: 'kumar.dk3671@gmail.com',
-                subject: 'Sucess Pipeline',
-                body: "Pipeline is sucessfull"
+        stage('post'){
+            steps{
+                post {
+                    sucess {
+                        mail to: 'kumar.dk3671@gmail.com',
+                        subject: 'Sucess Pipeline',
+                        body: "Pipeline is sucessfull"
+                    }
+                }
+            }    
         }
     }
 }   
-  
+   
