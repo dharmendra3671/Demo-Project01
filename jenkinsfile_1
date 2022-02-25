@@ -1,27 +1,4 @@
-pipeline {
-    agent any
-        stages {
-        stage('Bulding') {
-            steps {
-                bat 'PythonwithJson.py'
-            }
-        }
-        stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }   
-        stage('Deploy') {
-            steps {
-                echo 'Deploying'
-            }
-        }
-        stage('Release') {
-            steps {
-                echo 'Releasing'
-            }
-        }
-    }
+
     pipeline {
     agent any
         stages {
@@ -30,11 +7,6 @@ pipeline {
                 bat 'PythonwithJson.py'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing'
-            }
-        }   
         stage('Deploy') {
             steps {
                 echo 'Deploying'
