@@ -19,11 +19,11 @@ pipeline {
         stage('post') {
             steps {
                 echo 'Status of build'
-                    emailext attachLog: true, 
+                emailext attachLog: true, 
                     body: 'This is Test Pipeline job.', 
-                    recipientProviders: [buildUser()], 
+                    recipientProviders: [developers(), requestor()], 
                     subject: 'Test pipeline',
-                    to: 'sschinkumar3671@gmail.com'
+                    to: 'kumar.dk3671@gmail.com'
                 }
             }
         }
