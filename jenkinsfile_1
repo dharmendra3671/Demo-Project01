@@ -21,7 +21,9 @@ pipeline {
                 echo 'Status of build'
                 emailext attachLog: true, 
                     body: 'This is Test Pipeline job.', 
-                    recipientProviders: [buildUser()], 
+                    recipientProviders:[$class: 'CulpritsRecipientProvider'],
+                                        [$class: 'DevelopersRecipientProvider'],
+                                        [$class: 'RequesterRecipientProvider']], 
                     subject: 'Test pipeline', 
                     to: 'kumar.dk3671@gmail.com'
                 }
