@@ -1,4 +1,4 @@
-  pipeline {
+ pipeline {
     agent any
         stages {
         stage('Bulding') {
@@ -15,17 +15,19 @@
             steps {
                 echo 'Releasing'
             }
-        stage('post'){
-            steps{
+        }
+        stage('post') {
+            steps {
                 post {
                     sucess {
                         mail to: 'kumar.dk3671@gmail.com',
-                        subject: 'Sucess Pipeline',
-                        body: "Pipeline is sucessfull"
+                            subject: 'Sucess Pipeline',
+                            body: "Pipeline is sucessfull"
+                        }
                     }
+                    
                 }
-            }    
+            }
         }
-    }
-}   
-   
+    }        
+      
