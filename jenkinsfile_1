@@ -21,7 +21,8 @@ pipeline {
                 echo 'Status of build'
                 emailext body: "${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n\n ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
-                subject: "Jenkins Pipeline Build Status"  
+                subject: "Jenkins Pipeline Build Status"
+                to:"kumar.dk3671@gmail.com"
                }
             }
         }
