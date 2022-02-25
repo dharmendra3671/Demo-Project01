@@ -19,17 +19,10 @@ pipeline {
         stage('post') {
             steps {
                 echo 'Status of build'
-                emailext attachLog: true, body:
-                     """<p>EXECUTED: Job <b>\'${env.JOB_NAME}:${env.BUILD_NUMBER})\'
-                     </b></p><p>View console output at "<a href="${env.BUILD_URL}"> 
-                     ${env.JOB_NAME}:${env.BUILD_NUMBER}</a>"</p> 
-                     <p><i>(Build log is attached.)</i></p>""", 
-                    compressLog: true,
-                    recipientProviders: [[$class: 'DevelopersRecipientProvider'], 
-                    [$class: 'RequesterRecipientProvider']],
-                    replyTo: 'do-not-reply@company.com', 
-                    subject: "Status: ${currentBuild.result?:'SUCCESS'} - 
-                    Job \'${env.JOB_NAME}:${env.BUILD_NUMBER}\'", 
+                emailext attachLog: true, 
+                    body: 'This is Test Pipeline job.', 
+                    recipientProviders: [buildUser()], 
+                    subject: 'Test pipeline', 
                     to: 'kumar.dk3671@gmail.com'
                 }
             }
