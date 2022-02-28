@@ -24,14 +24,6 @@ pipeline {
                 error "failure test."
             }
         }
-        stage('Success') {
-            when {
-                expression { doError == '0' }
-            }
-            steps {
-                echo "OK"
-            }
-        }
     }
     post {
         always {
