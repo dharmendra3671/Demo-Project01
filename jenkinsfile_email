@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        doError = '0'
+        doError = '1'
     }
     agent any
         stages {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Error') {
             when {
-                expression { doError == '0' }
+                expression { doError == '1' }
             }
             steps {
                 echo "Failure"
@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Success') {
             when {
-                expression { doError == '1' }
+                expression { doError == '0' }
             }
             steps {
                 echo "OK"
@@ -40,8 +40,6 @@ pipeline {
                 subject: "Jenkins Pipeline Build Status",
 
                 body:"${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n ${currentBuild.currentResult}: Job ${env.JOB_NAME} \n ${currentBuild.currentResult}: ${env.BUILD_TAG}",
-
-                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
 
                 to:'kumar.dk3671@gmail.com'
         }
