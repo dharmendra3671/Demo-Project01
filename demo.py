@@ -3,7 +3,7 @@ import time
 from pathlib import Path
 from zipfile import ZipFile
 
-dir_name = 'D:\Test
+dir_name = 'D:\Test'
 
 list_of_files = filter( lambda x: os.path.isfile(os.path.join(dir_name, x)),
                         os.listdir(dir_name) )
