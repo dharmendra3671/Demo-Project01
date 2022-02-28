@@ -1,0 +1,49 @@
+pipeline {
+environment {
+        //This variable need be tested as string
+        doError = '1'
+    }
+    agent any
+        stages {
+        stage('Bulding') {
+            steps {
+                bat 'PythonwithJson.py'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying'
+            }
+        }
+        stage('Error') {
+            when {
+                expression { doError == '1' }
+            }
+            steps {
+                echo "Failure"
+                error "failure test."
+            }
+        }
+         stage('Success') {
+            when {
+                expression { doError == '0' }
+            }
+            steps {
+                echo "OK"
+            }
+        }
+    }
+    post {
+        always {
+
+                echo 'Status of build'
+                emailext attachLog:true,
+                subject: "Jenkins Pipeline Build Status",
+                body:"${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n\n ${currentBuild.currentResult}: Job ${env.JOB_NAME}",
+                recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
+                to:'kumar.dk3671@gmail.com'
+               
+        }
+            
+    }
+}
