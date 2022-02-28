@@ -39,7 +39,7 @@ pipeline {
                 emailext attachLog:true,
                 subject: "Jenkins Pipeline Build Status",
 
-                body:"${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_NUMBER}\n ${currentBuild.currentResult}: Job ${env.JOB_NAME} \n ${currentBuild.currentResult}: Job ${env.BUILD_ID}",
+                body:"${currentBuild.currentResult}: Job ${env.JOB_NAME} build ${env.BUILD_ID}\n ${currentBuild.currentResult}: Job ${env.JOB_NAME} \n ${currentBuild.currentResult}: Job ${env.BUILD_ID}",
 
                 recipientProviders: [[$class: 'DevelopersRecipientProvider'], [$class: 'RequesterRecipientProvider']],
 
