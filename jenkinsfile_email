@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        doError = '1'
+        doError = '0'
     }
     agent any
         stages {
@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Error') {
             when {
-                expression { doError == '1' }
+                expression { doError == '0' }
             }
             steps {
                 echo "Failure"
@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Success') {
             when {
-                expression { doError == '0' }
+                expression { doError == '1' }
             }
             steps {
                 echo "OK"
