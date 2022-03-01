@@ -1,3 +1,4 @@
+pip install artifactory
 from artifactory import ArtifactoryPath
 path = ArtifactoryPath('http://127.0.0.1:8082/artifactory',
     auth=('admin', 'Kumar@6805'))
