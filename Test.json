@@ -1,6 +1,6 @@
 {
-    "path": ["D:\\Test\\Testfile","D:\\Test2\\TestFile2"]
-    "files" : [6,]
-    "subdir" : ["D:\\Test","D:\\Test2"]
+    "path": ["D:\\Test\\Testfile","D:\\Test2\\TestFile2"],
+    "files" : [6,5],
+    "subdir" : ["D:\\Test","D:\\Test2"],
     "Zip_file_name" : ["D:\\Test\\Python.zip","D:\\Test2\\Python.zip"]
 }
