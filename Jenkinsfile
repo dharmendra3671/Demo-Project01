@@ -8,7 +8,7 @@ pipeline {
         }
         stage ('Upload'){
             steps {
-                bat 'artifactory.py'
+                bat 'zipartjf.py'
             }
         }
     }
