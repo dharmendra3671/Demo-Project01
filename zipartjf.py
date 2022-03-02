@@ -7,7 +7,7 @@ path = ArtifactoryPath('http://127.0.0.1:8082/artifactory/Zipfile_Artifactory/',
 path.touch()
 
 def filename():
-    os.chdir(r'D:\Test\Testfile')
+    os.chdir(r'D:\Test')
     for file in glob.glob("*.zip"):
         if os.path.exists(file):
             return file
