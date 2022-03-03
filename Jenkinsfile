@@ -1,9 +1,12 @@
+@Library("pythonhome_demo") -
+    
 pipeline {
     agent any
         stages {
         stage ('Python') {
             steps {
                 bat 'PythonwithJson.py'
+                
             }
         }
         stage ('Upload'){
