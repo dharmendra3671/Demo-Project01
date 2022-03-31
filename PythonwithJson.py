@@ -5,7 +5,8 @@ import zipfile
 import os
 import glob
 with open('Test.json','r') as filesdata:
-    filedata=json.load(filesdata)   
+    filedata=json.load(filesdata)
+    print(type(filedata))
 list_of_files = filter( lambda x: os.path.isfile(os.path.join(filedata['path'], x)),
                         os.listdir(filedata['path']))
 
